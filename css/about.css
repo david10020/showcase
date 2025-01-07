@@ -1,0 +1,725 @@
+/* General button styling */
+
+
+:root {
+  --blue: #BFD3E1; /* Define the color variable */
+  --pink: #D9ACCD;
+  --green: #C0DFCD;
+  --yellow: #ffa422;
+}
+
+/* TITLE */
+
+.me {
+  position: absolute; /* Fixes the H1 at a specific position on the viewport */
+    top: 60px; /* Distance from the top of the viewport */
+    left: 50%; /* Centers the element horizontally */
+    width: 100%;
+    transform: translateX(-50%); /* Centers the element precisely */
+    z-index: 1000; /* Ensures it stays above other content */
+    font-size: 3rem; /* Adjust font size for better visibility */
+    color: #ffffff; /* Set text color */
+    padding: 10px 20px; /* Optional padding for better readability */
+    border-radius: 5px; /* Optional rounded corners */
+    text-align: center; /* Centers the text inside the H1 */
+  }
+#me em {
+    background-color: #181717;
+    color: #FFF;
+    transform: translateX(-50%) perspective(1264px) rotateX(10deg) skewX(12deg); /* Perspective effect */
+
+}
+
+.mephoto{
+  width: 100%;
+  height: 100%;
+  margin-top: 35px;
+}
+
+.col-md-6 figure {
+  position: relative;
+  overflow: hidden; /* Ensures the reflection effect stays within the figure */
+}
+
+.col-md-6 figure::before {
+  content: ''; /* Essential to make the pseudo-element render */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  opacity: 0.8;
+  pointer-events: none;
+  transform: skewX(-30deg) translateX(-150%);
+  transition: transform 1.2s ease;
+}
+
+.col-md-6 figure:hover::before {
+  transform: skewX(-30deg) translateX(150%);
+}
+
+
+@media (max-width: 768px) {
+  #me {
+      font-size: 2rem; /* Adjust font size for smaller screens */
+      top: 5%; /* Adjust position for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+@keyframes shine {
+  0% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+}
+
+#me {
+  font-size: 3rem;
+  text-align: center;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  z-index: 1000;
+  position: absolute; /* Fixes the H1 at a specific position on the viewport */
+  top: 110px; /* Distance from the top of the viewport */
+  left: 50%; /* Centers the element horizontally */
+}
+
+.shine{
+  animation: shine 3s infinite ease-in-out; /* Shining effect every 3 seconds */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Subtle initial glow */
+}
+
+#welcome{
+  position: absolute;
+  left: 43%;
+  top: 15px;
+  font-size: 30px;
+  z-index: 10;
+  font-weight: bold;
+  color: black;
+}
+
+
+
+
+
+
+button {
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    background-color: transparent; /* Default transparent background */
+    z-index: 1000; /* Ensure buttons are above text */
+  }
+  
+  /* Button styles based on data-part attribute */
+  button[data-part] {
+    color: var(--button-color);
+    border-color: var(--button-color);
+  }
+  
+  button[data-part]:hover {
+    background-color: var(--button-color);
+    color: var(--button-text-color, white);
+    border: 2px solid #FFF; /* Default text color on hover is white */
+  }
+  
+  /* Define colors using custom properties */
+  button[data-part="1"] {
+    --button-color: #32ab65; /* Green */
+  }
+  
+  button[data-part="2"] {
+    --button-color: #74A1B5; /* Yellow */
+    --button-text-color: rgb(255, 255, 255); /* Override text color for better contrast */
+  }
+  
+  button[data-part="3"] {
+    --button-color: #54AD6C; /* Cyan */
+    --button-text-color: rgb(255, 255, 255); /* Override text color for better contrast */
+  }
+  
+  button[data-part="4"] {
+    --button-color: #19875b; /* Green */
+  }
+  
+  button[data-part="5"] {
+    --button-color: #B26BAC; /* Dark */
+    --button-text-color: rgb(255, 255, 255);
+  }
+  
+  /* Horizontal and fixed button styling */
+  .text-controls {
+    list-style: none; /* Remove bullets */
+    display: flex; /* Arrange items horizontally */
+    justify-content: space-between; /* Even spacing between buttons */
+    margin: 0;
+    top: 0; /* Fix to the top of the section */
+    background-color: white; /* Ensure buttons have a visible background */
+  }
+  
+  /* Ensure list items align properly */
+  .text-controls li {
+    margin: 0 5px; /* Add spacing between buttons */
+  }
+  
+  /* Text container */
+  #text-container {
+    position: relative; /* For animating text within the container */
+    margin-top: 60px; /* Add spacing below fixed buttons */
+    min-height: 150px; /* Ensure enough space for the text */
+  }
+  
+  /* Individual lines of text */
+  .text-part {
+    position: absolute; /* Position for smooth in-out animations */
+    width: 100%; /* Ensure it spans the container */
+    opacity: 0; /* Start hidden for animation */
+    transform: translateX(100px); /* Start further left for entering animation */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+  }
+  
+  /* Active text part (entering) */
+  .text-part.active {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Reset position */
+  }
+  
+  /* Exiting text part */
+  .text-part.exiting {
+    opacity: 0; /* Fade out */
+    transform: translateX(50px); /* Move further right for exiting animation */
+  }
+
+  /* Active state styling mimicking hover with white text */
+button[data-part]:active {
+    background-color: var(--button-color); /* Same background as hover */
+    color: w#212529; /* Text becomes white */
+    border-color: var(--button-color); /* Match border color to background */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transition for active state */
+}
+
+/* Example: Persistent active styling (e.g., for buttons representing the current section) */
+button[data-part].active {
+  background-color: var(--button-color); /* Same background as hover */
+  color: #fdfdfd; /* White text */
+  border:2px solid #FFF;
+  padding-bottom: 7px; /* Match border color to background */
+  transform: translateY(-5px) scale(1.09); /* Slight scaling for a dynamic effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, padding-bottom 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  transform: skewx(-5deg);
+}
+
+button:hover {
+  transform: translateY(-5px) scale(1.09); /* Smooth move up with scale */
+  padding-bottom: 7px;
+  transition: transform 0.4s ease, padding-bottom 0.4s ease;
+}
+
+.text-controls button[data-part] {
+  transition: transform 0.4s ease, padding-bottom 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+
+
+/* Optional: Active state for when button is clicked */
+
+
+.nav__list d-none d-md-block {
+    display: inline;
+}
+
+
+/* behind the secenes */
+
+.nav__list {
+    display: flex; /* Makes the list items align horizontally */
+    list-style: none; /* Removes default bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+.nav__list-item {
+    margin-right: 20px; /* Adds spacing between items */
+    font-size: 16px; /* Optional: Adjust font size */
+    cursor: pointer; /* Optional: Adds a pointer cursor for interactivity */
+}
+
+.nav__list-item:last-child {
+    margin-right: 0; /* Removes margin after the last item */
+}
+
+
+
+/*  adress */
+
+#adress1, #adress2  {display: none;
+}
+
+/* linkedin icon */
+svg {
+  fill: #0077B5; /* LinkedIn's brand color */
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+
+/* services P size font */
+
+#services p{
+  font-size: 13px;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* styles for the gallery */
+
+
+.portfolio-item {
+  display: block; /* Ensure portfolio items are visible */
+  width: 32% !important; /* Ensure items scale correctly within the grid */
+}
+
+
+.portfolio-item.is-hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction with hidden items */
+  transition: opacity 0.3s ease;
+}
+
+
+#filters .button-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0;
+  float: right;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 13px;
+  gap: 10px;
+  float: left;
+  width: 50%;
+}
+
+#filters p{
+  margin: 0px 0 0 4px;
+  color: #FFF;
+}
+
+.button-filters{
+  float: left;
+  clear: both;
+}
+
+#filters .btn:nth-child(1) {
+  border-color: var(--pink);
+  color: var(--pink);
+  opacity: 50%;
+}
+
+#filters .btn:nth-child(2) {
+  border-color: var(--yellow);
+  color: var(--yellow);
+  opacity: 50%;
+}
+
+#filters .btn:nth-child(3) {
+  border-color: var(--blue);
+  color: var(--blue);
+ 
+  opacity: 50%;
+}
+
+#filters .btn:nth-child(1):hover {
+  color: #000;
+  background-color: var(--pink);
+  opacity: 70%;
+}
+
+#filters .btn:nth-child(1).active {
+  color: #000;
+  background-color: var(--pink);
+  opacity: 100%;
+}
+
+#filters .btn:nth-child(2):hover {
+  background-color: var(--yellow);
+  color: #000;
+  opacity: 70%;
+}
+
+#filters .btn:nth-child(2).active {
+  background-color: var(--yellow);
+  color: #000;
+  opacity: 100%;
+}
+
+#filters .btn:nth-child(3):hover {
+  background-color: var(--blue);
+  color: #000;
+  opacity: 70%;
+}
+
+#filters .btn:nth-child(3).active {
+  background-color: var(--blue);
+  color: #000;
+  opacity: 100%;
+}
+
+
+/*frameworks */
+
+#framework {
+  float: right;
+  width: 30%;
+  margin: 13px;
+
+}
+
+#framework ul li {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 0px;
+
+}
+
+#framework p {
+  margin: 0px 10px 14px 0px;
+  color: #FFF;
+  float:left ;
+  gap: 10px;
+}
+
+#framework .circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%; /* Makes it circular */
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#framework .circle:nth-child(1){
+  background-color: #212529;
+  color: #01CC9B;
+  border: 2px solid #01CC9B;
+  opacity: 50%;
+}
+
+#framework .circle:nth-child(1):hover{
+  background-color: #01CC9B;
+  color: #FFF;
+ 
+}
+
+#framework .circle:nth-child(1).active{
+  background-color: var(--activecolor, #01CC9B);
+  color: #000;
+  opacity: 100%;
+  box-shadow: 1px 1px 9px #222;
+  border-color: #FFF;
+  font-weight: bold;
+}
+
+#framework .circle:nth-child(2){
+  background-color: #212529;
+  color: #ff00ae;
+  border: 2px solid #ff00ae;
+  opacity: 50%;
+  
+}
+
+#framework .circle:nth-child(2):hover{
+  background-color: #ff00ae;
+  color: #FFF;
+  
+}
+
+#framework .circle:nth-child(2).active{
+  background-color: #ff00ae;
+  color: #000;
+  opacity: 100%;
+  box-shadow: 1px 1px 9px #222;
+  border-color: #FFF;
+  font-weight: bold;
+}
+
+
+
+#framework .circle:nth-child(3){
+  background-color: #212529;
+  color: #FC2850;
+  border: 2px solid #FC2850;
+  opacity: 50%;
+ 
+}
+
+#framework .circle:nth-child(3):hover{
+  background-color: #FC2850;
+  color: #FFF;
+}
+
+#framework .circle:nth-child(3).active{
+  background-color: #FC2850;
+  color: #000;
+  opacity: 100%;
+  box-shadow: 1px 1px 9px #222;
+  border-color: #FFF;
+  font-weight: bold;
+}
+
+
+.sticky{
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  background-color: #212529;
+}
+
+.sticky::after{
+bottom: -10px; /* Adjust distance of shadow below the element */
+left: 0;
+width: 100%;
+height: 5px; /* Height of the shadow */
+background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+border-radius: 50%; /* Create a soft, curved shadow effect */
+pointer-events: none; /* Prevent interaction with the shadow */
+filter: blur(1px);
+}
+
+.button-list .button2 {
+  background-color: #787878;
+}
+
+
+.text-part code{
+  color: #3a3939;
+  font-size: 12px;
+  margin-bottom: 10px !important;
+  display: block;
+  padding: 8px;
+}
+
+
+
+.text-part b{
+  font-size: small;
+  font-style: italic;
+  color: #74A1B5;
+  margin-bottom: 20px;
+  display: block;
+  margin-top: px;
+}
+
+.text-part u{
+  font-size: small;
+  font-style: italic;
+  color: #19875b;
+  margin-bottom: 15px;
+  display: block;
+  margin-top: opx;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+.text-part sub{
+  font-size: small;
+  font-style: italic;
+  color: #b84baf;
+  margin-bottom: 24px;
+  display: block;
+  margin-top: 0px;
+}
+
+/*.button2.active {
+  background-color: rgb(255, 234, 0); /* Active button color 
+  color: white;
+  font-weight: bold;
+}
+*/
+
+.image-container {
+  margin-bottom: 10px;
+}
+
+.image-container sub{
+  position: absolute;
+    top: 58px;
+    left: 88px;
+    font-weight: bold;
+    color: #ebebeb;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: 27px !important;
+  border-radius: 5px;
+  position: relative;
+  top: 29px;
+  z-index: 5;
+  left: -7px;
+}
+
+.paragraph-container {
+  position: relative;
+  height: auto;
+  overflow: visible;
+  display: block;
+
+}
+
+.paragraph-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.paragraph {
+  display: none;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #ffffff;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.paragraph.active {
+  display: block;
+  position: relative;
+  animation-name: slot-machine;
+  padding: 10%;
+  clear: both;
+  height: auto;
+  color: var(--active-color, #01CC9B); /* Default color */
+  border: 1px dashed #444;
+  box-shadow: 1px 1px 9px #222;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+/* testing borders button filters */
+
+#filters .btn {
+  border: 2px solid transparent; /* Default border */
+  color: #212529; /* Default button text color */
+}
+
+/* Active button styles */
+#filters .btn.active  {
+  border-color: #FFF; /* Active border color */
+  color: var(--active-border-color, #01CC9B); /* Active text color */
+  box-shadow: 1px 1px 9px #222;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes slot-machine {
+  from {
+      transform: translateY(-50%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+/* h2 movement */
+
+h2 {
+  position: relative; /* Ensure relative positioning for right adjustment */
+  right: 50px; /* Initial offset */
+  transition: right 0.4s ease-out; /* Smooth transition */
+}
+
+/* banner leyends */
+
+.leyend, .leyend2, .leyend3 {
+  font-size: 16px;
+  color: #474646;
+  font-style: italic;
+  font-weight: bold;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-5%); /* Initially off-screen */
+  animation: slideIn 2s ease-out forwards; /* Apply the animation */
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0; /* Start hidden */
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1; /* End fully visible */
+  }
+}
+
+.image-container em{
+  position: absolute;
+  top: 28px;
+  left: -17px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  color: #444;
+}
