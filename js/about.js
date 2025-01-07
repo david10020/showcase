@@ -423,27 +423,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
-  // welcome message //
-
-  <script>
-        // Function to get the value of a specific parameter from the URL
-        function getURLParameter(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        // Get the values of 'name', 'type', and 'skills' from the URL
-        const name = getURLParameter('name');
-        const type = getURLParameter('type');
-        const skills = getURLParameter('skills');
-
-        // Display the message based on the parameters
-        const messageElement = document.getElementById('welcome');
-
-        if (name && type && skills) {
-            messageElement.innerHTML = `Hello, ${name}! You are a ${type} skilled in ${skills}. Welcome to my website!`;
-        } else {
-            messageElement.innerHTML = "Hello! Welcome to my website.";
-        }
-    </script>
