@@ -109,12 +109,13 @@
 
 #welcome{
   position: absolute;
-  left: 43%;
   top: 15px;
-  font-size: 30px;
+  font-size: 21px;
   z-index: 10;
   font-weight: bold;
   color: black;
+  width: 100%;
+  text-align: center;
 }
 
 
