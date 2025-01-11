@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             messageElement.innerHTML = `Hello, ${name}! You are a ${type} skilled in ${skills}. Welcome to my website!`;
         } else {
             // If only 'name' is provided
-            messageElement.innerHTML = `Glad you're here, ${name}! Let’s dive in!`;
+            messageElement.innerHTML = `Welcome, ${name}!`;
         }
     } else {
         // If 'name' is not present, show a generic message
