@@ -345,14 +345,14 @@ svg {
 }
 
 #filters .btn:nth-child(1) {
-  border-color: var(--pink);
-  color: var(--pink);
+  border-color: var(--yellow);
+  color: var(--yellow);
   opacity: 50%;
 }
 
 #filters .btn:nth-child(2) {
-  border-color: var(--yellow);
-  color: var(--yellow);
+  border-color: var(--pink);
+  color: var(--pink);
   opacity: 50%;
 }
 
@@ -365,24 +365,24 @@ svg {
 
 #filters .btn:nth-child(1):hover {
   color: #000;
-  background-color: var(--pink);
+  background-color: var(--yellow);
   opacity: 70%;
 }
 
 #filters .btn:nth-child(1).active {
   color: #000;
-  background-color: var(--pink);
+  background-color: var(--yellow);
   opacity: 100%;
 }
 
 #filters .btn:nth-child(2):hover {
-  background-color: var(--yellow);
+  background-color: var(--pink);
   color: #000;
   opacity: 70%;
 }
 
 #filters .btn:nth-child(2).active {
-  background-color: var(--yellow);
+  background-color: var(--pink);
   color: #000;
   opacity: 100%;
 }
