@@ -169,6 +169,7 @@ $(document).ready(function () {
         const isotopeInstance = $grid.isotope({
             itemSelector: '.portfolio-item',
             layoutMode: 'fitRows',
+            filter: '.mar',
             fitRows: {
                 gutter: 20 // Space between items
             }
@@ -209,13 +210,14 @@ $(document).ready(function () {
         const isotopeInstance = $grid.isotope({
             itemSelector: '.portfolio-item',
             layoutMode: 'fitRows',
+            filter: '.mar',
             fitRows: {
                 gutter: 20 // Space between items
             }
         });
 
         // Handle filtering
-        $('#filters .btn').on('click', function (e) {
+       $('#filters .btn').on('click', function (e) {
             e.preventDefault(); // Prevent default link behavior
             const filterValue = $(this).attr('data-filter');
 
