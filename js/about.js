@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             requestAnimationFrame(() => {
                 targetText.style.opacity = "1"; // Fade in the text part
                 targetText.style.transform = "translateX(0)"; // Move to original position
-                targetText.style.transition = "opacity 0.8s ease, transform 0.8s ease"; // Apply smooth transition
+                targetText.style.transition = "opacity 0.5s ease, transform 0.5s ease"; // Apply smooth transition
             });
             targetText.classList.add("active"); // Add active class
         }
